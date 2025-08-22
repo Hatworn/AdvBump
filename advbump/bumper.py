@@ -6,7 +6,7 @@ import discord
 
 
 class Bumper:
-    def __init__(self, token: str, channel_id: int, delay: int, bump_cooldown: int, max_random_delay: int) -> None:
+    def __init__(self, token: str, channel_id: int, delay: float, bump_cooldown: float, max_random_delay: float) -> None:
         self._token = token
         self._channel_id = channel_id
 
@@ -47,5 +47,5 @@ class Bumper:
             await command.__call__(channel)
             await asyncio.sleep(2)
 
-        current_time = datetime.now().strftime("%d/%m/%y %H:%M:%S")
+        current_time = datetime.today().strftime("%d/%m/%y %H:%M:%S")
         print(f"{current_time} - The server got bumped: {channel.guild.name}")

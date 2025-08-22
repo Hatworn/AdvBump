@@ -11,7 +11,7 @@ def get_config(path: str) -> dict:
         return json.load(file)
 
 
-def create_bumper_tasks(accounts: list, action_duration: int, bump_cooldown: int, max_random_delay: int) -> list:
+def create_bumper_tasks(accounts: list, action_duration: float, bump_cooldown: float, max_random_delay: float) -> list:
     tasks = []
     execution_delay = 0
     delay = action_duration / len(accounts)
